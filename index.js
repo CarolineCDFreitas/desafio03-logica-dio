@@ -1,3 +1,62 @@
+let squad127 = [
+  {
+    name: "Johnny",
+    id: "#01",
+    age: 29,
+    type: "guerreiro",
+    xp: 5478,
+  },
+  {
+    name: "Taeyong",
+    id: "#02",
+    age: 29,
+    type: "mago",
+    xp: 123653,
+  },
+  {
+    name: "Yuta",
+    id: "#03",
+    age: 29,
+    type: "ninja",
+    xp: 13,
+  },
+  {
+    name: "Doyoung",
+    id: "#04",
+    age: 28,
+    type: "monge",
+    xp: 8754,
+  },
+  {
+    name: "Jaehyun",
+    id: "#05",
+    age: 27,
+    type: "monge",
+    xp: 98345,
+  },
+  {
+    name: "Jungwoo",
+    id: "#06",
+    age: 26,
+    type: "mago",
+    xp: 123300000,
+  },
+  {
+    name: "Mark",
+    id: "#07",
+    age: 25,
+    type: "ninja",
+    xp: 4563,
+  },
+  {
+    name: "Haechan",
+    id: "#08",
+    age: 24,
+    type: "ninja",
+    xp: 8723,
+  },
+];
+
 class Hero {
   constructor(name, age, type, xp) {
     this.name = name;
@@ -53,26 +112,15 @@ class Hero {
   message() {
     const attack = this.attack();
     const level = this.level();
-    const message = `O ${this.type} ${this.name}, ${this.age}, está no nível ${level}, e atacou usando ${attack}.`;
+    const message = `O ${this.type} ${this.name}, ${this.age}, nível ${level}, atacou usando ${attack}.`;
     return message;
   }
 }
 
-let ninja127 = new Hero("Jungwoo", 26, "ninja", 87655);
-console.log(ninja127.message());
+let newHeroesMessage = [];
+for (const member of squad127) {
+  const members = new Hero(member.name, member.age, member.type, member.xp);
+  newHeroesMessage.push(members.message());
+}
 
-let monge127 = new Hero("Yuta", 28, "monge", 8770);
-console.log(monge127.message());
-
-let guerreiro127 = new Hero("Johnny", 28, "guerreiro", 10772994775);
-console.log(guerreiro127.message());
-
-let mago127 = new Hero("Jaehyun", 27, "mago", 87300742);
-console.log(mago127.message());
-
-let czennie127 = new Hero("Caroline", 31, "fã", 1001);
-console.log(czennie127.message());
-
-
-
-
+console.log(newHeroesMessage);
